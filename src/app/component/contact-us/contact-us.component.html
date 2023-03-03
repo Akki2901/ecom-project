@@ -1,3 +1,7 @@
+<header style="text-align: center; margin-top: 20px">
+  <h1 style="font-size: 2em; color: #333">Contact Us Page</h1>
+</header>
+
 <form
   [formGroup]="contactForm"
   (ngSubmit)="onSubmit()"
@@ -6,6 +10,12 @@
   <div class="form-group">
     <label for="name">Name:</label>
     <input type="text" class="form-control" id="name" formControlName="name" />
+    <span
+      class="text-danger"
+      *ngIf="(contactFormControl['name'].touched || submitted) && contactFormControl['name'].errors?.['required']"
+    >
+      Name is required
+    </span>
   </div>
 
   <div class="form-group">
@@ -16,6 +26,18 @@
       id="email"
       formControlName="email"
     />
+    <span
+      class="text-danger"
+      *ngIf="(contactFormControl['email'].touched || submitted) && contactFormControl['email'].errors?.['required']"
+    >
+      Email is required
+    </span>
+    <span
+      class="text-danger"
+      *ngIf="contactFormControl['email'].touched && contactFormControl['email'].errors?.['email']"
+    >
+      Invalid Email Address
+    </span>
   </div>
 
   <div class="form-group">
@@ -26,7 +48,15 @@
       formControlName="message"
       rows="5"
     ></textarea>
+    <span
+      class="text-danger"
+      *ngIf="(contactFormControl['message'].touched || submitted) && contactFormControl['message'].errors?.['required']"
+    >
+      Message is required
+    </span>
   </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <div style="text-align: center; margin-top: 20px">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
 </form>

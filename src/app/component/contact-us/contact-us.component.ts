@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ContactUsComponent {
   contactForm!: FormGroup;
+  submitted = false;
 
   constructor(private fb: FormBuilder) {
     this.createForm();
@@ -21,8 +22,12 @@ export class ContactUsComponent {
     });
   }
 
+  get contactFormControl() {
+    return this.contactForm.controls;
+  }
+
   onSubmit() {
-    console.log(this.contactForm);
+    this.submitted = true;
     if (this.contactForm.invalid) {
       alert('Invalid Form Request');
       return;
