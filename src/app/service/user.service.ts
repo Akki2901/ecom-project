@@ -11,4 +11,8 @@ export class UserService {
   setUsername(username: string) {
     this._username.next(username);
   }
+
+  logout() {
+    this._username.next(null);
+  }
 }

@@ -23,11 +23,11 @@
           class="dropdown-menu dropdown-menu-left"
           aria-labelledby="userDropdown"
         >
-          <button class="dropdown-item">Logout</button>
+          <button class="dropdown-item" (click)="logout()">Logout</button>
         </div>
       </div>
     </ng-container>
-    <button *ngIf="!username" routerLink="login" class="btn btn-primary">
+    <button *ngIf="!username" routerLink="login" class="btn btn-light">
       Login
     </button>
     <button routerLink="contact" class="btn btn-primary">Contact</button>
