@@ -1,33 +1,10 @@
-<div class="container">
-  <div class="row">
-    <ng-container *ngFor="let item of productList">
-      <div class="card col-md-3">
-        <img src="{{ item.image }}" alt="" />
-        <h5
-          style="
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 100ch;
-          "
-        >
-          {{ item.title }}
-        </h5>
-        <p
-          style="
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 100ch;
-          "
-        >
-          {{ item.description }}
-        </p>
-        <p><strong>Price:</strong> ${{ item.price }}</p>
-        <button class="btn btn-primary" (click)="addtocart(item)">
-          Add to cart
-        </button>
-      </div>
-    </ng-container>
+<div class="loader" *ngIf="loading">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+<div class="row" *ngIf="!loading">
+  <div class="col-md-4" *ngFor="let product of productList">
+    <app-product [item]="product" (addToCart)="addtocart($event)"></app-product>
   </div>
 </div>

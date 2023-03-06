@@ -3,19 +3,19 @@
     {
       "id": 1,
       "username": "Akshay",
-      "password": "password123",
+      "password": "1234",
       "email": "Akshay@example.com"
     },
     {
       "id": 2,
       "username": "Akhil",
-      "password": "password456",
+      "password": "4567",
       "email": "Akhil@example.com"
     },
     {
       "id": 3,
       "username": "Aryan",
-      "password": "password789",
+      "password": "7890",
       "email": "Aryan@example.com"
     }
   ]

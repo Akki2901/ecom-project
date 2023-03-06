@@ -11,26 +11,15 @@
       <span class="fas fa-search search-icon"></span>
     </div>
     <ng-container *ngIf="username">
-      <div class="dropdown">
-        <button
-          class="btn btn-primary dropdown-toggle"
-          type="button"
-          id="userDropdown"
-        >
-          Hi {{ username }}!
-        </button>
-        <div
-          class="dropdown-menu dropdown-menu-left"
-          aria-labelledby="userDropdown"
-        >
-          <button class="dropdown-item" (click)="logout()">Logout</button>
-        </div>
+      <div class="user-info">
+        Hi {{ username }}!
+        <button class="btn btn-danger ml-2" (click)="logout()">Logout</button>
       </div>
     </ng-container>
     <button *ngIf="!username" routerLink="login" class="btn btn-light">
       Login
     </button>
-    <button routerLink="contact" class="btn btn-primary">Contact</button>
+    <button routerLink="contact" class="btn btn-light">Contact</button>
     <button routerLink="cart" class="btn btn-primary">
       <i style="font-size: 30px" class="fas fa-cart-plus"></i>
       <div style="font-size: 10px" class="badge bg-danger">
